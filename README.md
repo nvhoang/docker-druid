@@ -1,21 +1,6 @@
 Docker Druid
 ================
 
-Tags:
-
-- 0.9.1.1, 0.9, latest ([Dockerfile](https://github.com/znly/docker-druid/blob/master/Dockerfile))
-
-What is Druid?
-==================
-
-Druid is an open-source analytics data store designed for business intelligence (OLAP) queries on event data. Druid provides low latency (real-time) data ingestion, flexible data exploration, and fast data aggregation. Existing Druid deployments have scaled to trillions of events and petabytes of data. Druid is most commonly used to power user-facing analytic applications.
-
-
-How to use?
-===========
-
-Druid being a complex system, the best way to get up and running with a cluster is to use the docker-compose file provided. 
-
 
 ```
 git clone git@github.com:nvhoang/docker-druid.git
@@ -45,10 +30,15 @@ If you plan to use this image on your local machine, be carefull with the JVM he
 
 The docker-compose file is setup to run on a macbook.
 
-Documentation
-=============
 
-Work in progress
+Quick start
+=============
+* Run `up.sh` to get up. Logs will be streamed to console.
+* Ctrl-C and `down.sh` to destroy.
+* When Druid is up, run `index_wiki.sh` to index wiki dataset. Then look at http://localhost:8090 for indexing jobs.
+* After indexing, Druid takes few minutes to load up segments, look for blue circle next to wiki datasource at http://localhost:9091
+* Once Druid segment is loaded up successfully (i.e. blue circle), run `query_wiki.sh`.
+
 
 Configuration
 =============

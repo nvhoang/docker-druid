@@ -6,6 +6,14 @@
       "inputSpec" : {
         "type" : "static",
         "paths" : "/shared/wikiticker-2015-09-12-sampled.json"
+      },
+      "updaterJobSpec": {
+        "segmentOutputPath": "/shared/druidStorage",
+        "segmentTable": "druid_segments",
+        "password": "TCrGaanoC2s7gT",
+        "connectURI": "jdbc:postgresql://postgres:5432/postgres",
+        "type": "postgresql",
+        "user": "postgres"
       }
     },
     "dataSchema" : {
@@ -75,7 +83,6 @@
     },
     "tuningConfig" : {
       "type" : "hadoop",
-      "ignoreInvalidRows": true,
       "partitionsSpec" : {
         "type" : "hashed",
         "targetPartitionSize" : 5000000

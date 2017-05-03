@@ -8,6 +8,8 @@ services:
       - POSTGRES_PASSWORD=TCrGaanoC2s7gT
     volumes:
       - ./volumes:/shared
+    ports:
+      - "${LOCAL_POSTGRES_PORT}:5432"
 
   zookeeper:
     container_name: zookeeper

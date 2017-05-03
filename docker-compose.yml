@@ -6,6 +6,8 @@ services:
     container_name: postgres
     environment:
       - POSTGRES_PASSWORD=TCrGaanoC2s7gT
+    volumes:
+      - ./volumes:/shared
 
   zookeeper:
     container_name: zookeeper
@@ -15,7 +17,7 @@ services:
       - ZOO_SERVERS=zookeeper
 
   overlord:
-    image: znly/druid:0.9.1.1
+    image: nvhoang/druid:0.9.1.1
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -23,9 +25,13 @@ services:
       - DRUID_NEWSIZE=250m
     command:
       - overlord
+    volumes:
+      - ./volumes:/shared
+    ports:
+      - "${LOCAL_OVERLORD_PORT}:8090"
 
   coordinator:
-    image: znly/druid:0.9.1.1
+    image: nvhoang/druid:0.9.1.1
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -33,10 +39,13 @@ services:
       - DRUID_NEWSIZE=250m
     command:
       - coordinator
-
+    ports:
+      - "${LOCAL_COORDINATOR_PORT}:8081"
+    volumes:
+      - ./volumes:/shared
 
   middlemanager:
-    image: znly/druid:0.9.1.1
+    image: nvhoang/druid:0.9.1.1
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -44,9 +53,11 @@ services:
       - DRUID_NEWSIZE=250m
     command:
       - middleManager
+    volumes:
+      - ./volumes:/shared
 
   historical:
-    image: znly/druid:0.9.1.1
+    image: nvhoang/druid:0.9.1.1
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -54,9 +65,11 @@ services:
       - DRUID_NEWSIZE=250m
     command:
       - historical
+    volumes:
+      - ./volumes:/shared
 
   broker:
-    image: znly/druid:0.9.1.1
+    image: nvhoang/druid:0.9.1.1
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -64,3 +77,9 @@ services:
       - DRUID_NEWSIZE=250m
     command:
       - broker
+    volumes:
+      - ./volumes:/shared
+    ports:
+      - "${LOCAL_BROKER_PORT}:8082"
+
+

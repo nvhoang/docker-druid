@@ -1,3 +1,4 @@
 .*.sw*
 .*.un*
 Makefile
+volumes/druidStorage/

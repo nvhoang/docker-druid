@@ -16,10 +16,9 @@ How to use?
 
 Druid being a complex system, the best way to get up and running with a cluster is to use the docker-compose file provided. 
 
-Clone our public repository:
 
 ```
-git clone git@github.com:znly/docker-druid.git
+git clone git@github.com:nvhoang/docker-druid.git
 ```
 
 and run :
@@ -61,6 +60,10 @@ Available environment options:
 - `DRUID_NEWSIZE` '-'
 - `DRUID_MAXNEWSIZE` '-'
 - `DRUID_HOSTNAME` '-'
+
+Rebuild
+=============
+`docker build -t nvhoang/druid:0.9.1.1 .`
 
 Authors
 =======

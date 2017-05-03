@@ -28,5 +28,6 @@ COPY conf /opt/druid-$DRUID_VERSION/conf
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN mkdir -p /tmp/druid
+RUN mkdir -p /tmp/druid-logs
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

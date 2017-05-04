@@ -69,6 +69,8 @@ services:
       - historical
     volumes:
       - ./volumes:/shared
+    ports:
+      - "${LOCAL_HISTORICAL_PORT}:8083"
 
   broker:
     image: nvhoang/druid:${DRUID_VERSION}
@@ -83,5 +85,3 @@ services:
       - ./volumes:/shared
     ports:
       - "${LOCAL_BROKER_PORT}:8082"
-
-

@@ -24,12 +24,9 @@ RUN wget -q --no-check-certificate --no-cookies -O - \
     http://www-eu.apache.org/dist/hadoop/common/hadoop-2.6.5/hadoop-2.6.5.tar.gz | tar -xzf - -C /opt \
     && ln -s /opt/hadoop-2.6.5 /opt/hadoop
 
-#RUN wget -q --no-check-certificate --no-cookies -O - \ 
-#    http://static.druid.io/artifacts/releases/druid-$DRUID_VERSION-bin.tar.gz | tar -xzf - -C /opt \
-#    && ln -s /opt/druid-$DRUID_VERSION /opt/druid
-
-#RUN rm /opt/druid/lib/druid-*.jar
-RUN mkdir /opt/druid
+RUN wget -q --no-check-certificate --no-cookies -O - \ 
+    http://static.druid.io/artifacts/releases/druid-$DRUID_VERSION-bin.tar.gz | tar -xzf - -C /opt \
+    && ln -s /opt/druid-$DRUID_VERSION /opt/druid
 
 COPY private/druid-custom.tgz /opt/druid/druid.tgz
 RUN cd /opt/druid && tar -xzvf druid.tgz

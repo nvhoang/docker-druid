@@ -1,0 +1,7 @@
+{
+  "queryType" : "select",
+  "dataSource" : "wikiticker",
+  "intervals" : ["2015-09-12/2015-09-13"],
+  "pagingSpec":{"pagingIdentifiers": {}, "threshold":5},
+  "granularity" : "all"
+}

@@ -37,6 +37,6 @@ fi
 
 #while [ true ]; do
 #echo \
-java `cat /opt/druid/conf/druid/$1/jvm.config | xargs` -cp /opt/druid/conf/druid/_common:/opt/druid/conf/druid/$1:/opt/druid/lib/*:/opt/druid/druidJars/*:$(/opt/hadoop/bin/hadoop classpath) io.druid.cli.Main server $@
+java `cat /opt/druid/conf/druid/$1/jvm.config | xargs` -cp /opt/druid/conf/druid/_common:/opt/druid/conf/druid/$1:/opt/druid/druidJars/*:$(/opt/hadoop/bin/hadoop classpath) io.druid.cli.Main server $@
 #sleep 1
 #done

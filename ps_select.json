@@ -1,0 +1,8 @@
+{
+  "queryType" : "select",
+  "dataSource" : "psinfo",
+  "intervals": ["2017-03-22T00:00:00.000Z/2017-03-22T00:10:00.000Z"],
+  "filter": {"type": "regex", "dimension": "command_string", "pattern": ".*collect"},
+  "pagingSpec":{"pagingIdentifiers": {}, "threshold":5},
+  "granularity" : "second"
+}

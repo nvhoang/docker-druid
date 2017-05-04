@@ -2,3 +2,4 @@
 .*.un*
 Makefile
 volumes/druidStorage/
+private/

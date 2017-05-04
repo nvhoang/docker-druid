@@ -1,1 +1,1 @@
-docker build -t nvhoang/druid:0.9.1.1 .
+docker build -t nvhoang/druid:0.9.2.1-2 .

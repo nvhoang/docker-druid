@@ -19,7 +19,7 @@ services:
       - ZOO_SERVERS=zookeeper
 
   overlord:
-    image: nvhoang/druid:0.9.1.1
+    image: nvhoang/druid:${DRUID_VERSION}
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -33,7 +33,7 @@ services:
       - "${LOCAL_OVERLORD_PORT}:8090"
 
   coordinator:
-    image: nvhoang/druid:0.9.1.1
+    image: nvhoang/druid:${DRUID_VERSION}
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -47,7 +47,7 @@ services:
       - ./volumes:/shared
 
   middlemanager:
-    image: nvhoang/druid:0.9.1.1
+    image: nvhoang/druid:${DRUID_VERSION}
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -59,7 +59,7 @@ services:
       - ./volumes:/shared
 
   historical:
-    image: nvhoang/druid:0.9.1.1
+    image: nvhoang/druid:${DRUID_VERSION}
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
@@ -71,7 +71,7 @@ services:
       - ./volumes:/shared
 
   broker:
-    image: nvhoang/druid:0.9.1.1
+    image: nvhoang/druid:${DRUID_VERSION}
     environment:
       - DRUID_XMX=1g 
       - DRUID_XMS=1g 
